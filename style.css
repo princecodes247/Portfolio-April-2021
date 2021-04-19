@@ -1,0 +1,314 @@
+/* GENERAL STUFF */
+@font-face {
+  font-family: Montserrat;
+  src: url(/fonts/Montserrat-Regular.ttf);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+:root {
+  --prim-color: #3b90cc;
+  --grey-color: #050505;
+  --l-grey-color: #252525;
+  --bg: black;
+}
+
+body {
+  position: relative;
+  background-color: var(--bg);
+  color: aliceblue;
+  font-family: Montserrat;
+  width: 100vw;
+}
+
+body h3 {
+  line-height: 0.9em;
+  font-weight: 500;
+}
+
+body .bg {
+  position: absolute;
+  z-index: -1;
+  height: 100%;
+}
+
+body .bg canvas {
+  display: block;
+}
+
+body section {
+  height: 90vh;
+  padding: 0 10%;
+}
+
+body aside {
+  position: absolute;
+  right: 0;
+  height: 90vh;
+  background-color: var(--prim-color);
+  width: 100vw;
+  max-width: 750px;
+}
+
+body header {
+  color: var(--prim-color);
+  height: 10vh;
+  background-color: var(--bg);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 10%;
+  width: 100vw;
+}
+
+body header .name {
+  line-height: 0.9em;
+  font-weight: 500;
+}
+
+body header .side-ham {
+  position: relative;
+}
+
+body header .side-ham .line {
+  position: absolute;
+  content: "";
+  display: block;
+  width: 70%;
+  background-color: var(--prim-color);
+  height: 2px;
+  -webkit-transition: 0.4s ease-out width;
+  transition: 0.4s ease-out width;
+}
+
+body header .side-ham .line:nth-of-type(1) {
+  top: 0;
+  left: 0;
+}
+
+body header .side-ham .line:nth-of-type(2) {
+  right: 0;
+  bottom: 0;
+}
+
+body header .side-ham:hover .line,
+body header .side-ham:hover .line {
+  width: 100%;
+}
+
+body header .drop.circle {
+  width: 35px;
+  height: 15px;
+  top: 50%;
+  right: 5%;
+}
+
+body main {
+  position: relative;
+}
+
+body main section {
+  padding-top: 30px;
+}
+
+body main section h3 {
+  margin-bottom: 20px;
+}
+
+body main section p {
+  font-size: 1.5em;
+}
+
+body main section p.sub {
+  margin-top: 5px;
+  font-size: 1.1em;
+}
+
+body main section ol {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(1000px);
+          transform: perspective(1000px);
+}
+
+body main section li.work {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-y: hidden;
+  padding: 10px 0;
+  border-top: 1px solid white;
+  -webkit-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+  -webkit-transform: translate3d(0, 2px, 20px);
+          transform: translate3d(0, 2px, 20px);
+}
+
+body main section li.work:last-of-type {
+  border-bottom: 1px solid white;
+}
+
+body main section li.work p.sub {
+  height: 0em;
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+}
+
+body main section li.work:hover p.sub {
+  height: 1.1em;
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
+}
+
+body main #intro-sect {
+  position: relative;
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  overflow: hidden;
+  height: 85vh;
+}
+
+body main #intro-sect .heading {
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: perspective(300px);
+          transform: perspective(300px);
+}
+
+body main #intro-sect .heading h1 {
+  font-family: Audiowide, Montserrat;
+  line-height: 0.9em;
+}
+
+body main #intro-sect .heading h1:nth-of-type(1) {
+  -webkit-transform: scale3d(0.7, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+          transform: scale3d(0.7, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+}
+
+body main #intro-sect .heading h1:nth-of-type(2) {
+  -webkit-transform: scale3d(1, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+          transform: scale3d(1, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+}
+
+body main #intro-sect h1 {
+  color: aliceblue;
+  font-size: 3.5em;
+  text-align: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+body main #intro-sect .cta-btn {
+  top: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  z-index: 40;
+  padding: 0;
+  position: relative;
+}
+
+body main #intro-sect .cta-btn p {
+  text-align: center;
+  position: absolute;
+  left: 50%;
+  -webkit-transform: translate(-50%, 0%);
+          transform: translate(-50%, 0%);
+}
+
+body main #intro-sect .cta-btn .circle {
+  border: 2px solid var(--prim-color);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  -webkit-clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+          clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+body main #intro-sect .cta-btn .circle.right {
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+          clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+body main .gallery {
+  position: relative;
+  width: 100vw;
+}
+
+body main .gallery .grid {
+  margin: 0;
+  padding: 0;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-auto-rows: 150px;
+  gap: 5px;
+}
+
+body main .gallery .grid div {
+  background-color: var(--l-grey-color);
+  -webkit-transition: 1s all;
+  transition: 1s all;
+}
+
+body .blue-text {
+  color: var(--prim-color);
+  padding: 0;
+  margin: 0;
+}
+
+form {
+  outline: 1px solid red;
+}
+
+form input {
+  background-color: transparent;
+  border: 1px solid white;
+  padding: 10px;
+}
+/*# sourceMappingURL=style.css.map */
