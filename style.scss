@@ -3,6 +3,10 @@
   font-family: Montserrat;
   src: url(/fonts/Montserrat-Regular.ttf);
 }
+@font-face {
+  font-family: Audiowide;
+  src: url(/fonts/Audiowide-Regular.ttf);
+}
 
 *,
 *::after,
@@ -94,20 +98,6 @@ body {
       &:hover .line {
         width: 100%;
       }
-    }
-    .drop.circle {
-      //position: absolute;
-      //   border: 2px solid var(--prim-color);
-      //   border-radius: 50%;
-      width: 35px;
-      height: 15px;
-      top: 50%;
-      right: 5%;
-      //transform: translateX(-50%);
-      //   &:nth-of-type(2) {
-      //     top: 70%;
-      //     left: 95%;
-      //   }
     }
   }
 
@@ -254,7 +244,6 @@ body {
 }
 
 form {
-  outline: 1px solid red;
   display: flex;
   height: min-content;
   width: 80vw;
@@ -262,7 +251,7 @@ form {
   align-items: center;
   .form-item {
     margin: 20px 0;
-    outline: 1px solid green;
+
     input {
       background-color: transparent;
       border: 1px solid white;
@@ -282,8 +271,8 @@ form {
 .form-item {
   position: relative;
   width: 70vw;
-
-  //overflow: hidden;
+  min-height: 50px;
+  overflow: hidden;
   margin-bottom: 20px;
 
   .input {
@@ -300,12 +289,13 @@ form {
 }
 .form-item label {
   position: absolute;
-  bottom: 0;
+  bottom: 14px;
   left: 0;
+
   width: 100%;
   height: 100%;
   pointer-events: none;
-  border-bottom: solid 1px blue;
+  z-index: 4;
 }
 .form label::after {
   content: "";
@@ -314,20 +304,21 @@ form {
   top: 1px;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--p-high);
+  border-bottom: 1px solid var(--prim-color);
   transition: all 0.5s ease;
   transform: translateX(-100%);
 }
 .content-name {
   position: absolute;
   bottom: 8px;
-  left: 0;
+  left: 10px;
   transition: all 0.3s ease;
 }
 .input-in + .input-label .content-name,
 .form input:valid + .input-label .content-name {
   transform: translateY(-200%);
-  color: var(--p-high);
+  color: var(--prim-color);
+
   font-size: 14px;
 }
 .input-in + .input-label::after,
