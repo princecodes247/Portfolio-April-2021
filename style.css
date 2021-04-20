@@ -45,6 +45,9 @@ body .bg canvas {
 
 body section {
   height: 90vh;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
   padding: 0 10%;
   width: 100vw;
 }
@@ -329,6 +332,7 @@ form .form-item {
 form .form-item input {
   background-color: transparent;
   border: 1px solid white;
+  color: white;
   width: 100%;
   padding: 10px;
 }
@@ -381,7 +385,7 @@ form .form-item input {
 
 .content-name {
   position: absolute;
-  bottom: 5px;
+  bottom: 8px;
   left: 0;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
