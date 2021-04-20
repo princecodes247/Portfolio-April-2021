@@ -7,10 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Model</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="form.css">
 
 </head>
 
 <body>
+    <script defer src="lax.js"></script>
+    <script defer src="form.js"></script>
     <script defer src="main.js"></script>
     <script defer type="module" src="three.module.js"></script>
     <script defer type="module" src="threeD.js"></script>
@@ -93,11 +96,13 @@
                     </label>
                 </div>
                 <div class="form-item">
-                    <input type="text" name="message" id="contact-message" required>
+
+                    <textarea class="input" name="message" id="contact-message" cols="30" rows="10"></textarea>
                     <label for="message" class="input-label">
                         <span class="content-name">Message</span>
                     </label>
                 </div>
+                <button>Submit</button>
             </form>
         </section>
     </main>
