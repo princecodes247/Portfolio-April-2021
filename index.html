@@ -77,21 +77,27 @@
         <section>
             <h3>Skills and Tools</h3>
         </section>
-        <section>
+        <section class="contact">
             <h3>Contact Me</h3>
-            <form action="" method="post">
-                <label for="">
-                    <p>Name:</p>
-                    <input type="text" name="name" id="contact-name">
-                </label>
-                <label for="">
-                    <p>Email:</p>
-                    <input type="email" name="email" id="contact-email">
-                </label>
-                <label for="">
-                    <p>Message:</p>
-                    <input type="text" name="message" id="contact-message">
-                </label>
+            <form class="form" action="" method="post">
+                <div class="form-item">
+                    <input type="text" name="name" id="contact-name" required>
+                    <label for="name" class="input-label">
+                        <span class="content-name">Name</span>
+                    </label>
+                </div>
+                <div class="form-item">
+                    <input type="email" name="email" id="contact-email" required>
+                    <label for="email" class="input-label">
+                        <span class="content-name">Email</span>
+                    </label>
+                </div>
+                <div class="form-item">
+                    <input type="text" name="message" id="contact-message" required>
+                    <label for="message" class="input-label">
+                        <span class="content-name">Message</span>
+                    </label>
+                </div>
             </form>
         </section>
     </main>
