@@ -7,7 +7,14 @@
   font-family: Audiowide;
   src: url(/fonts/Audiowide-Regular.ttf);
 }
-
+@font-face {
+  font-family: Starjedi;
+  src: url(/fonts/Stjldbl1.ttf);
+}
+@font-face {
+  font-family: Starout;
+  src: url(/fonts/Starjhol.ttf);
+}
 *,
 *::after,
 *::before {
@@ -18,7 +25,7 @@
 }
 
 :root {
-  --prim-color: #3b90cc;
+  --prim-color: #ffffff;
   --grey-color: #050505;
   --l-grey-color: #252525;
   --bg: black;
@@ -27,8 +34,9 @@ body {
   position: relative;
   background-color: var(--bg);
   color: aliceblue;
-  font-family: Montserrat;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
   width: 100vw;
+  padding: 0;
   //overflow: hidden;
   h3 {
     line-height: 0.9em;
@@ -43,19 +51,6 @@ body {
     }
   }
   section {
-    height: 90vh;
-    min-height: fit-content;
-    padding: 0 10%;
-    width: 100vw;
-  }
-
-  aside {
-    position: absolute;
-    right: 0;
-    height: 90vh;
-    background-color: var(--prim-color);
-    width: 100vw;
-    max-width: 750px;
   }
   header {
     color: var(--prim-color);
@@ -68,9 +63,10 @@ body {
     align-items: center;
     justify-content: space-between;
     padding: 0 10%;
-    width: 100vw;
+    width: 100%;
     .name {
       line-height: 0.9em;
+      font-family: Starout;
       font-weight: 500;
     }
     .side-ham {
@@ -103,9 +99,15 @@ body {
 
   main {
     position: relative;
-
+    padding: 0;
     section {
+      height: 90vh;
+
+      padding: 0 10%;
+      width: 100%;
+
       padding-top: 30px;
+      min-height: 40em;
       //outline: 1px solid red;
       h3 {
         margin-bottom: 20px;
@@ -147,7 +149,7 @@ body {
     #intro-sect {
       position: relative;
 
-      width: 100vw;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -161,15 +163,21 @@ body {
       // }
       .heading {
         transform-style: preserve-3d;
-        transform: perspective(300px);
+        transform: perspective(300px) scale(0.8) translateY(-50%);
+        //@each $var in list {
+          
+        }: clamp(60px, 50%, 600px);
         h1 {
-          font-family: Audiowide, Montserrat;
+          font-family: Starout, Audiowide, Montserrat, Arial, Helvetica,
+            sans-serif;
           line-height: 0.9em;
+          font-weight: 100;
+
           &:nth-of-type(1) {
-            transform: scale3d(0.7, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+            transform: scale3d(0.7, 1.8, 2.8) rotate3d(1, 0, 0, 45deg);
           }
           &:nth-of-type(2) {
-            transform: scale3d(1, 1.3, 2.8) rotate3d(1, 0, 0, 45deg);
+            transform: scale3d(1, 1.6, 2.8) rotate3d(1, 0, 0, 45deg);
           }
         }
       }
@@ -241,4 +249,8 @@ body {
     padding: 0;
     margin: 0;
   }
+}
+
+#contact-sect {
+  height: 90vh;
 }
