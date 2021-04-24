@@ -8,12 +8,14 @@ form {
 .form-item {
   margin: 20px 0;
 }
-input {
+input,
+.input {
   background-color: transparent;
   border: 1px solid white;
   color: white;
   width: 100%;
   padding: 10px;
+  border-radius: 5px;
 }
 
 .contact {
@@ -26,19 +28,17 @@ input {
   position: relative;
   width: 70vw;
   min-height: 50px;
-  overflow: hidden;
+  /* overflow: hidden; */
   margin-bottom: 20px;
 }
 .input {
   width: 100%;
   height: 100%;
   font-size: 16px;
-  color: white;
-  padding-top: 20px;
-  background: transparent;
-  -webkit-tap-highlight-color: transparent;
 
-  padding-left: 5px;
+  padding: 15px;
+
+  -webkit-tap-highlight-color: transparent;
 }
 
 .form-item label {
@@ -51,17 +51,15 @@ input {
   pointer-events: none;
   z-index: 4;
 }
-.form label::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 1px;
-  width: 100%;
-  height: 100%;
-  border-bottom: 1px solid var(--prim-color);
-  transition: all 0.5s ease;
-  transform: translateX(-100%);
+
+.form-item .input + label {
+  bottom: 4px;
 }
+.form-item .input + label .content-name {
+  bottom: unset;
+  top: 5px;
+}
+
 .content-name {
   position: absolute;
   bottom: 8px;
@@ -71,13 +69,10 @@ input {
 .input-in + .input-label .content-name,
 .form input:valid + .input-label .content-name {
   transform: translateY(-200%);
-  color: var(--prim-color);
+  left: 0px;
+  /* color: var(--prim-color); */
 
   font-size: 14px;
-}
-.input-in + .input-label::after,
-.input:valid + .input-label::after {
-  transform: translateX(0);
 }
 
 .remember-cont {
@@ -92,27 +87,22 @@ input {
 }
 
 textarea {
+  padding: 10px;
   background: transparent;
   border: none;
   outline: none;
+  font-family: Montserrat, Arial, Helvetica, sans-serif;
 }
 
-/* input:-webkit-autofill,
-  input:-webkit-autofill:hover,
-  input:-webkit-autofill:focus,
-  input:-webkit-autofill:active {
-    -webkit-box-shadow: 0 0 0 30px var(--bg) inset !important;
-  } */
-@-webkit-keyframes autofill {
-  0%,
-  100% {
-    color: white;
-    background: transparent;
-  }
-}
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active,
+input:-internal-autofill-selected,
+input:-internal-autofill-previewed {
+  -webkit-box-shadow: 0 0 0 30px black inset !important;
+  -webkit-text-fill-color: white !important;
 
-input:-webkit-autofill {
-  -webkit-animation-delay: 1s; /* Safari support - any positive time runs instantly */
-  -webkit-animation-name: autofill;
-  -webkit-animation-fill-mode: both;
+  background-color: black !important;
+  color: white !important;
 }

@@ -50,8 +50,6 @@ body {
       display: block;
     }
   }
-  section {
-  }
   header {
     color: var(--prim-color);
     height: 10vh;
@@ -107,10 +105,6 @@ body {
     z-index: 99999;
   }
 
-  #contact-sect {
-    height: 90vh;
-  }
-
   main {
     position: relative;
     padding: 0;
@@ -121,8 +115,6 @@ body {
       width: 100%;
 
       padding-top: 30px;
-      //min-height: 40em;
-      //outline: 1px solid red;
       h3 {
         margin-bottom: 20px;
       }
@@ -133,86 +125,84 @@ body {
           font-size: 1.1em;
         }
       }
-      ol {
-        transform-style: preserve-3d;
-        transform: perspective(1000px);
-      }
-      li.work {
-        height: fit-content;
-        overflow-y: hidden;
-        padding: 10px 0;
-        border-top: 1px solid white;
-        transition: 0.6s all ease;
-        transform: translate3d(0, 2px, 20px);
-        &:last-of-type {
-          border-bottom: 1px solid white;
-        }
-      }
-    }
-    #intro-sect {
-      position: relative;
-
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding: 0;
-      justify-content: center;
-      overflow: hidden;
-
-      height: 90vh;
-      // > * {
-      //   padding: 0 10%;
-      // }
-      .heading {
-        transform-style: preserve-3d;
-        transform: perspective(300px) scale(0.8) translateY(-50%);
-        //width: clamp(60px, 50%, 600px);
-        h1 {
-          font-family: Starout, Audiowide, Montserrat, Arial, Helvetica,
-            sans-serif;
-          line-height: 0.9em;
-          font-weight: 100;
-
-          &:nth-of-type(1) {
-            transform: scale3d(0.7, 1.8, 2.8) rotate3d(1, 0, 0, 45deg);
-          }
-          &:nth-of-type(2) {
-            transform: scale3d(1, 1.6, 2.8) rotate3d(1, 0, 0, 45deg);
-          }
-        }
-      }
-
-      h1 {
-        color: aliceblue;
-
-        //transform: rotate3d(1, 42, 12, 45deg);
-        font-size: 3.5em;
-        //font-family: Montserrat;
-        text-align: center;
-        justify-self: center;
-        align-self: center;
-      }
-
-      .cta-btn {
-        //position: absolute;
-        top: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        width: 150px;
-        height: 50px;
-        z-index: 40;
-        padding: 0;
+      &#intro-sect {
         position: relative;
-        //border: 1px solid var(--prim-color);
-        p {
-          text-align: center;
-          position: absolute;
-          left: 50%;
-          transform: translate(-50%, 0%);
+        height: 90vh;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        justify-content: center;
+        overflow: hidden;
+
+        .heading {
+          transform-style: preserve-3d;
+          transform: perspective(300px) scale(0.8) translateY(-50%);
+
+          h1 {
+            font-family: Starout, Audiowide, Montserrat, Arial, Helvetica,
+              sans-serif;
+            line-height: 0.9em;
+            font-weight: 100;
+            color: aliceblue;
+
+            font-size: 3.5em;
+
+            text-align: center;
+            justify-self: center;
+            align-self: center;
+            &:nth-of-type(1) {
+              transform: scale3d(0.7, 1.8, 2.8) rotate3d(1, 0, 0, 45deg);
+            }
+            &:nth-of-type(2) {
+              transform: scale3d(1, 1.6, 2.8) rotate3d(1, 0, 0, 45deg);
+            }
+          }
         }
+
+        .cta-btn {
+          top: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          width: 150px;
+          height: 50px;
+          z-index: 40;
+          padding: 0;
+          position: relative;
+          //border: 1px solid var(--prim-color);
+          p {
+            text-align: center;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%);
+          }
+        }
+      }
+      &#works-sect {
+        nav {
+          display: flex;
+        }
+        ol {
+          transform-style: preserve-3d;
+          transform: perspective(1000px);
+        }
+        li.work {
+          height: fit-content;
+          overflow-y: hidden;
+          padding: 10px 0;
+          border-top: 1px solid white;
+          transition: 0.6s all ease;
+          transform: translate3d(0, 2px, 20px);
+          &:last-of-type {
+            border-bottom: 1px solid white;
+          }
+        }
+      }
+      &#contact-sect {
+        height: 90vh;
       }
     }
   }

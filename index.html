@@ -5,18 +5,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Model</title>
+    <title>Prince Gbalam</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="form.css">
+    <link rel="stylesheet" href="button.css">
 
 </head>
 
 <body>
-    <script defer src="lax.js"></script>
+
     <script defer src="form.js"></script>
     <script defer src="main.js"></script>
     <script defer type="module" src="three.module.js"></script>
-    <script defer type="module" src="threeD.js"></script>
+    <script defer type="module" src="theeD.js"></script>
+    <section id="loading-page">
+
+    </section>
     <header>
         <h3 class="name">Prince<br>Gbalam</h3>
         <div class="side-ham-container">
@@ -28,6 +32,7 @@
     </header>
 
     <main>
+
         <section id="intro-sect">
             <div class="threeD-bg bg"></div>
             <div class="heading">
@@ -40,47 +45,70 @@
         </section>
         <section>
             <h3>About</h3>
-            <p>I'm a Full Stack Developer at Imagine Bytes, where we develop awesome UI, websites and products that
+            <p>I'm a Full Stack Developer at Imagine Bytes, where we develop awesome UI, websites, apps and products
+                that
                 increase the reach, presence and productivity of our happy clients. I'm also a teacher of Programming
                 related courses at Trident Tech Inc. I also freelance.
                 If you have any questions or job offers, do contact me abeg 😅
             </p>
         </section>
-        <section>
+        <section id="works-sect">
             <h3>Works</h3>
-            <ol>
+            <nav>
+                <label><input type="radio" name="works-option" id="">
+                    <p>All</p>
+                </label>
+                <label><input type="radio" name="works-option" id="">
+                    <p>Frontend</p>
+                </label>
+                <label><input type="radio" name="works-option" id="">
+                    <p>Backend</p>
+                </label>
+                <label><input type="radio" name="works-option" id="">
+                    <p>UI Design</p>
+                </label>
+            </nav>
+            <ul>
                 <li class="work">
+                    <img src="#" alt="" sizes="" srcset="">
                     <p>FirstTime2020</p>
                     <p class="sub">Front-end + Back-end</p>
                 </li>
                 <li class="work">
+                    <img src="#" alt="" sizes="" srcset="">
                     <p>InstaNovella</p>
                     <p class="sub">Front-end + Back-end</p>
                 </li>
                 <li class="work">
+                    <img src="#" alt="" sizes="" srcset="">
                     <p>Glassmorphism Generator</p>
                     <p class="sub">Front-end</p>
                 </li>
+
                 <li class="work">
-                    <p>CleanWater</p>
-                    <p class="sub">Front-end + Back-end</p>
-                </li>
-                <li class="work">
+                    <img src="#" alt="" sizes="" srcset="">
                     <p>Uemma Trade</p>
                     <p class="sub">Front-end</p>
                 </li>
                 <li class="work">
+                    <img src="#" alt="" sizes="" srcset="">
                     <p>Countdown Timer</p>
                     <p class="sub">Front-end</p>
 
                 </li>
 
-            </ol>
+            </ul>
         </section>
         <section>
             <h3>Skills and Tools</h3>
+            <div class="skill-grid">
+                <div class="list">Frontend</div>
+                <div class="list">Backend</div>
+                <div class="list">Mobile</div>
+                <div class="list">Other Skills</div>
+            </div>
         </section>
-        <section class="contact">
+        <section class="contact" id="contact-sect">
             <h3>Contact Me</h3>
             <form class="form" action="" method="post">
                 <div class="form-item">
@@ -97,15 +125,15 @@
                 </div>
                 <div class="form-item">
 
-                    <textarea class="input" name="message" id="contact-message" cols="30" rows="10"></textarea>
-                    <label for="message" class="input-label">
-                        <span class="content-name">Message</span>
-                    </label>
+                    <textarea class="input" name="message" id="contact-message" cols="30" rows="10"
+                        placeholder="Drop a message"></textarea>
+
                 </div>
                 <button>Submit</button>
             </form>
         </section>
     </main>
+
 
 </body>
 
