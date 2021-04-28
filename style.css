@@ -47,6 +47,8 @@ body {
 body h3 {
   line-height: 0.9em;
   font-weight: 500;
+  font-size: 1.2em;
+  position: relative;
 }
 
 body .bg {
@@ -124,6 +126,23 @@ body #loading-page {
   left: 0;
   background-color: #ff333333;
   z-index: 99999;
+}
+
+body li {
+  list-style: none;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow-y: hidden;
+  margin-bottom: 10px;
+  padding: 5px;
+  -webkit-transition: 0.6s all ease;
+  transition: 0.6s all ease;
+  background-color: #080808;
+}
+
+body li:hover {
+  background-color: #111;
 }
 
 body main {
@@ -236,6 +255,46 @@ body main section#works-sect nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+body main section#works-sect nav input {
+  display: none;
+}
+
+body main section#works-sect nav input:checked + label {
+  border-bottom: 1px solid white;
+}
+
+body main section#works-sect nav input:active + label {
+  background-color: #111111;
+}
+
+body main section#works-sect nav label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  text-align: center;
+  font-size: 0.6em;
+  padding: 5px;
+  -webkit-transition: 0.4s all ease;
+  transition: 0.4s all ease;
+}
+
+body main section#works-sect nav label:hover {
+  background-color: #090909;
 }
 
 body main section#works-sect ol {
@@ -246,20 +305,10 @@ body main section#works-sect ol {
 }
 
 body main section#works-sect li.work {
-  height: -webkit-fit-content;
-  height: -moz-fit-content;
-  height: fit-content;
-  overflow-y: hidden;
-  padding: 10px 0;
-  border-top: 1px solid white;
   -webkit-transition: 0.6s all ease;
   transition: 0.6s all ease;
   -webkit-transform: translate3d(0, 2px, 20px);
           transform: translate3d(0, 2px, 20px);
-}
-
-body main section#works-sect li.work:last-of-type {
-  border-bottom: 1px solid white;
 }
 
 body main section#contact-sect {
@@ -268,16 +317,18 @@ body main section#contact-sect {
 
 body .skill-grid {
   margin: 0;
+  margin-top: 40px;
   padding: 0;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(180px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  grid-auto-rows: 150px;
+  -ms-grid-columns: (minmax(80px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  grid-auto-rows: 80px;
   gap: 5px;
 }
 
 body .skill-grid div {
+  background-color: var(--l-grey-color);
   -webkit-transition: 1s all;
   transition: 1s all;
 }
