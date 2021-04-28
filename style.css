@@ -135,7 +135,7 @@ body li {
   height: fit-content;
   overflow-y: hidden;
   margin-bottom: 10px;
-  padding: 5px;
+  padding: 10px;
   -webkit-transition: 0.6s all ease;
   transition: 0.6s all ease;
   background-color: #080808;
