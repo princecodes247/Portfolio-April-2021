@@ -33,6 +33,8 @@
   --grey-color: #050505;
   --l-grey-color: #252525;
   --bg: black;
+  --bar: 85%;
+  --speed: 2s;
 }
 
 body {
@@ -120,6 +122,19 @@ body header .side-ham:hover .line {
 
 body #loading-page {
   height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100vw;
   position: fixed;
   top: 0;
@@ -127,6 +142,38 @@ body #loading-page {
   left: 0;
   background-color: #000000;
   z-index: 99999;
+}
+
+body #loading-page svg path {
+  fill: #ffffff00;
+  stroke: #ffffff;
+  stroke-width: 0.08;
+  stroke-linecap: butt;
+  stroke-dasharray: 40;
+  stroke-dashoffset: 40;
+  -webkit-animation: name-fillup 5s ease infinite alternate forwards;
+          animation: name-fillup 5s ease infinite alternate forwards;
+}
+
+body #loading-page .progress-bar {
+  outline: 1px solid #fff;
+  width: 40%;
+  height: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+body #loading-page .progress-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  -webkit-transition: 1s all ease;
+  transition: 1s all ease;
+  -webkit-animation: bar-fillup var(--speed) ease forwards;
+          animation: bar-fillup var(--speed) ease forwards;
 }
 
 body li {
@@ -392,5 +439,51 @@ body .skill-grid div:hover {
 .hide {
   height: 100vh;
   overflow: hidden;
+}
+
+@-webkit-keyframes name-fillup {
+  0% {
+    stroke-dasharray: 40;
+  }
+  100% {
+    stroke-width: 0;
+    fill: #ffffffff;
+    stroke-dasharray: 80;
+  }
+}
+
+@keyframes name-fillup {
+  0% {
+    stroke-dasharray: 40;
+  }
+  100% {
+    stroke-width: 0;
+    fill: #ffffffff;
+    stroke-dasharray: 80;
+  }
+}
+
+@-webkit-keyframes bar-fillup {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--bar);
+  }
+}
+
+@keyframes bar-fillup {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--bar);
+  }
+}
+
+.filled::before {
+  -webkit-animation-play-state: paused;
+          animation-play-state: paused;
+  width: 100%;
 }
 /*# sourceMappingURL=style.css.map */

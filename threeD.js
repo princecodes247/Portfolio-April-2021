@@ -18,7 +18,7 @@ function mouseAnimateParticles(ev) {
 }
 const clock = new THREE.Clock();
 init();
-animate();
+setTimeout(animate(), 13000);
 function init() {
   camera = new THREE.PerspectiveCamera(
     60,
