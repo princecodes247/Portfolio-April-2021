@@ -185,17 +185,18 @@ body li {
   padding: 10px;
   -webkit-transition: 0.6s all ease;
   transition: 0.6s all ease;
-  background-color: #080808;
+  background-color: #222;
+  
 }
 
 body li:hover {
-  background-color: #111;
+  background-color: #444;
 }
 
 body main {
   position: relative;
   padding: 0;
-}
+} 
 
 body main section {
   height: -webkit-fit-content;
