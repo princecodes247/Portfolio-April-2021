@@ -11,14 +11,13 @@ let mouseY = 100,
 
 document.addEventListener("mousemove", mouseAnimateParticles);
 //document.addEventListener("touchmove", mouseAnimateParticles);
-
+init()
 function mouseAnimateParticles(ev) {
   mouseY = ev.clientY;
   mouseX = ev.clientX;
 }
 const clock = new THREE.Clock();
-init();
-animate();
+
 function init() {
   camera = new THREE.PerspectiveCamera(
     60,
@@ -86,7 +85,7 @@ function animate(params) {
   // stars.rotation.y = mouseX * (elaspedTime * 0.00009);
   // stars.rotation.x = mouseY * (elaspedTime * 0.00009);
   //stars.rotation.z += 0.007;
-  starGeometry.vertices.forEach((p) => {
+    starGeometry.vertices.forEach((p) => {
     let boost = p.boost > 0 ? p.boost : 0;
     p.velocity += p.acceleration + boost;
     p.y -= p.velocity;
@@ -100,7 +99,10 @@ function animate(params) {
   stars.rotation.y += 0.004;
   starGeometry.verticesNeedUpdate = true;
 
+  
   requestAnimationFrame(animate);
 
   renderer.render(scene, camera);
 }
+
+export {init,animate}

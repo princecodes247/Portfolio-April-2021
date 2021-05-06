@@ -66,7 +66,8 @@
 
         <div class="progress-bar"></div>
     </section>
-    <script>
+    <script type="module">
+    import * as intro from "./threeD.js";
         window.onload = () => {
             let loadingPage = document.querySelector("#loading-page")
             let progressBar = loadingPage.querySelector(".progress-bar")
@@ -76,7 +77,9 @@
             r.style.setProperty('--speed', '3s')
             progressBar.classList.add("filled")
             setTimeout(() => {
-                loadingPage.style.display = "none"
+                loadingPage.classList.add("scale-out-center")
+                
+                intro.animate()
             }, 3000)
         }
     </script>
