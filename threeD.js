@@ -87,13 +87,15 @@ function animate(params) {
   //stars.rotation.z += 0.007;
     starGeometry.vertices.forEach((p) => {
     let boost = p.boost > 0 ? p.boost : 0;
+    
     p.velocity += p.acceleration + boost;
     p.y -= p.velocity;
-    p.boost -= 0.008;
+    p.boost -= 0.002;
 
     if (p.y < -200) {
-      p.y = 200;
+      p.y = 170;
       p.velocity = 0;
+      p.x = Math.random() * 600 - 300
     }
   });
   stars.rotation.y += 0.004;
@@ -103,6 +105,16 @@ function animate(params) {
   requestAnimationFrame(animate);
 
   renderer.render(scene, camera);
+}
+
+function easeInExpo(x) {
+  return x === 0 ? 0 : Math.pow(2, 10 * x - 10);
+}
+function easeOutExpo(x) {
+  return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
+}
+function easeInCirc(x) {
+  return 1 - Math.sqrt(1 - Math.pow(x, 2));
 }
 
 export {init,animate}
