@@ -40,7 +40,7 @@ function init() {
     );
     star.velocity = 0;
     star.acceleration = 0.02;
-    star.boost = 1;
+    star.boost = 0.6;
     starGeometry.vertices.push(star);
   }
   let sprite = new THREE.TextureLoader().load("star.png");
@@ -50,27 +50,10 @@ function init() {
     map: sprite,
   });
   stars = new THREE.Points(starGeometry, starMaterial);
-  // geometry = new THREE.BufferGeometry();
-  // particlesCnt = 2000;
-  // posArray = new Float32Array(particlesCnt * 3);
-
-  // for (let i = 0; i < particlesCnt * 3; i++) {
-  //   posArray[i] = (Math.random() - 0.5) * (Math.random() * 40);
-  // }
-  // geometry.setAttribute("position", new THREE.BufferAttribute(posArray, 3));
-
-  // const material = new THREE.PointsMaterial({
-  //   size: 0.009,
-  //   blending: THREE.AdditiveBlending,
-  // });
-
-  //mesh = new THREE.Points(geometry, material);
-  // mesh.position.x = 0;
-  // mesh.position.y = 0;
+  stars.displacement = 0;
   scene.add(stars);
   renderer = new THREE.WebGLRenderer();
   renderer.setClearColor("#000000");
-  //renderer.setClearAlpha(1);
   renderer.setSize(window.innerWidth, window.innerHeight);
   introInDom.appendChild(renderer.domElement);
   window.addEventListener("resize", () => {
@@ -81,10 +64,6 @@ function init() {
 }
 
 function animate(params) {
-  // const elaspedTime = clock.getElapsedTime();
-  // stars.rotation.y = mouseX * (elaspedTime * 0.00009);
-  // stars.rotation.x = mouseY * (elaspedTime * 0.00009);
-  //stars.rotation.z += 0.007;
     starGeometry.vertices.forEach((p) => {
     let boost = p.boost > 0 ? p.boost : 0;
     
@@ -92,19 +71,36 @@ function animate(params) {
     p.y -= p.velocity;
     p.boost -= 0.002;
 
-    if (p.y < -200) {
-      p.y = 170;
-      p.velocity = 0;
-      p.x = Math.random() * 600 - 300
+    if (p.y < -400) {
+      pointReset(p)
     }
   });
-  stars.rotation.y += 0.004;
+  stars.rotation.y += sineWave(stars);
   starGeometry.verticesNeedUpdate = true;
 
   
   requestAnimationFrame(animate);
 
   renderer.render(scene, camera);
+}
+
+function sineWave(target){
+  let amplitude = 0.009;
+    var frequency = 360;
+    
+    
+        let y = amplitude * Math.sin(target.displacement/frequency);
+        target.displacement += 1
+         return y
+        
+    
+}
+
+function pointReset(point) {
+  point.y = Math.random() * 100 + 170;
+      point.velocity = 0;
+      point.z = Math.random() * 600 - 300
+      point.x = Math.random() * 600 - 300
 }
 
 function easeInExpo(x) {
