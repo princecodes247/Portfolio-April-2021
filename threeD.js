@@ -50,7 +50,10 @@ function init() {
     map: sprite,
   });
   stars = new THREE.Points(starGeometry, starMaterial);
-  stars.displacement = 0;
+  stars.displacementY = 0;
+  console.log(stars.rotation.z);
+  stars.displacementZ = 0;
+  stars.displacementZLimit = 0;
   scene.add(stars);
   renderer = new THREE.WebGLRenderer();
   renderer.setClearColor("#000000");
@@ -75,7 +78,12 @@ function animate(params) {
       pointReset(p)
     }
   });
-  stars.rotation.y += sineWave(stars);
+ stars.rotation.y += sineWave(stars);
+// if (stars.rotation.x < 361) {
+//   stars.rotation.x += sineWave(stars,true);
+  
+// }
+  
   starGeometry.verticesNeedUpdate = true;
 
   
@@ -84,13 +92,17 @@ function animate(params) {
   renderer.render(scene, camera);
 }
 
-function sineWave(target){
-  let amplitude = 0.009;
-    var frequency = 360;
+function sineWave(target, z=false, amplitude = 0.009, frequency = 360){
+    if (z) {
+      let y = amplitude * Math.sin(stars.displacementZ / frequency);
+      stars.displacementZ += 1;
+      return y
+    } else {
+      
+    }
     
-    
-        let y = amplitude * Math.sin(target.displacement/frequency);
-        target.displacement += 1
+        let y = amplitude * Math.sin(stars.displacementY/frequency);
+        stars.displacementY += 1;
          return y
         
     
