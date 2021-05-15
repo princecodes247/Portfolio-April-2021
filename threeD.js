@@ -71,7 +71,7 @@ function animate(params) {
     p.y -= p.velocity;
     p.boost -= 0.002;
 
-    if (p.y < -400) {
+    if (p.y < -300) {
       pointReset(p)
     }
   });
@@ -102,6 +102,7 @@ function pointReset(point) {
       point.z = Math.random() * 600 - 300
       point.x = Math.random() * 600 - 300
 }
+
 
 function easeInExpo(x) {
   return x === 0 ? 0 : Math.pow(2, 10 * x - 10);
