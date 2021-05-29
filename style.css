@@ -185,23 +185,24 @@ body li {
   padding: 10px;
   -webkit-transition: 0.6s all ease;
   transition: 0.6s all ease;
-  background-color: #222;
-  
+  background-color: transparent;
+  border-bottom: 1px solid var(--prim-color);
 }
 
 body li:hover {
-  background-color: #444;
+  background-color: #4444;
 }
 
 body main {
   position: relative;
   padding: 0;
-} 
+}
 
 body main section {
   height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
+  text-align: center;
   padding: 5em 10%;
   width: 100%;
   padding-top: 30px;
@@ -209,15 +210,21 @@ body main section {
 
 body main section h3 {
   margin-bottom: 20px;
+  text-align: center;
 }
 
 body main section p {
   font-size: 1.5em;
+  text-align: left;
 }
 
 body main section p.sub {
   margin-top: 5px;
   font-size: 1.1em;
+}
+
+body main section button {
+  margin-top: 20px;
 }
 
 body main section#intro-sect {
@@ -242,6 +249,8 @@ body main section#intro-sect {
 }
 
 body main section#intro-sect .heading {
+  position: relative;
+  top: 0;
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: perspective(300px) scale(0.8) translateY(-50%);
@@ -249,8 +258,7 @@ body main section#intro-sect .heading {
 }
 
 body main section#intro-sect .heading h1 {
-  font-family: Starout, Audiowide, Montserrat, Arial, Helvetica,
- sans-serif;
+  font-family: Starout, Audiowide, Montserrat, Arial, Helvetica, sans-serif;
   line-height: 0.9em;
   font-weight: 100;
   color: aliceblue;
@@ -300,7 +308,18 @@ body main section#intro-sect .cta-btn p {
           transform: translate(-50%, 0%);
 }
 
-body main section#works-sect nav {
+body main section#about-sect .sub {
+  margin-top: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 50px;
+}
+
+body main section#projects-sect nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -310,19 +329,19 @@ body main section#works-sect nav {
   margin-bottom: 20px;
 }
 
-body main section#works-sect nav input {
+body main section#projects-sect nav input {
   display: none;
 }
 
-body main section#works-sect nav input:checked + label {
+body main section#projects-sect nav input:checked + label {
   border-bottom: 1px solid white;
 }
 
-body main section#works-sect nav input:active + label {
+body main section#projects-sect nav input:active + label {
   background-color: #111111;
 }
 
-body main section#works-sect nav label {
+body main section#projects-sect nav label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -342,27 +361,26 @@ body main section#works-sect nav label {
   transition: 0.4s all ease;
 }
 
-body main section#works-sect nav label:hover {
+body main section#projects-sect nav label:hover {
   background-color: #090909;
 }
 
-body main section#works-sect ul {
+body main section#projects-sect ul {
   -webkit-transform-style: preserve-3d;
           transform-style: preserve-3d;
   -webkit-transform: perspective(1000px);
           transform: perspective(1000px);
-  margin: 0;
-  margin-top: 40px;
+  margin: 40px 0;
   padding: 0;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: (minmax(280px, 1fr))[auto-fit];
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  grid-auto-rows: 240px;
+  grid-auto-rows: 350px;
   gap: 5px;
 }
 
-body main section#works-sect li.work {
+body main section#projects-sect li.project {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -381,22 +399,24 @@ body main section#works-sect li.work {
   -webkit-transform: translate3d(0, 2px, 20px);
           transform: translate3d(0, 2px, 20px);
   height: 100%;
+  border-radius: 5px;
+  border: none;
 }
 
-body main section#works-sect li.work img {
+body main section#projects-sect li.project img {
   -ms-flex-item-align: stretch;
       -ms-grid-row-align: stretch;
       align-self: stretch;
-  background-color: #050505;
+  background-color: transparent;
   border: none;
   margin-bottom: 10px;
   -webkit-box-flex: 3;
       -ms-flex: 3;
           flex: 3;
-  height: 100%;
+  width: 120px;
 }
 
-body main section#works-sect li.work div {
+body main section#projects-sect li.project div {
   -webkit-box-flex: 2;
       -ms-flex: 2;
           flex: 2;
@@ -488,9 +508,15 @@ body .skill-grid div:hover {
   width: 100%;
 }
 
+.filled::before {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  width: 100%;
+}
+
 .scale-out-center {
-  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
-  animation: scale-out-center 0.5s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  -webkit-animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
+  animation: scale-out-center 0.5s cubic-bezier(0.55, 0.085, 0.68, 0.53) both;
 }
 
 /* ----------------------------------------------
@@ -499,7 +525,6 @@ body .skill-grid div:hover {
  * See http://animista.net/license for more info. 
  * w: http://animista.net, t: @cssanimista
  * ---------------------------------------------- */
-
 /**
  * ----------------------------------------
  * animation scale-out-center
@@ -508,27 +533,26 @@ body .skill-grid div:hover {
 @-webkit-keyframes scale-out-center {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
 }
+
 @keyframes scale-out-center {
   0% {
     -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
     opacity: 1;
   }
   100% {
     -webkit-transform: scale(0);
-            transform: scale(0);
+    transform: scale(0);
     opacity: 1;
   }
 }
-
-
 /*# sourceMappingURL=style.css.map */

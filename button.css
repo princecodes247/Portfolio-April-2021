@@ -1,7 +1,7 @@
 button {
   position: relative;
   color: #fff;
-
+  text-align: center;
   cursor: default;
   padding: 15px 30px;
   background-color: transparent;

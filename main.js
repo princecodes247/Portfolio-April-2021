@@ -10,6 +10,7 @@ window.addEventListener("scroll", () => {
     target2.style.transform = `perspective(300px) scale(${
       window.scrollY / length + 0.8
     }) translateY(-50%)`;
+    target2.style.top = `${(window.scrollY / length) * 165}px`;
     target.forEach((text) => {
       text.style.opacity = t;
     });
@@ -30,8 +31,6 @@ buttons.forEach((button) => {
     page.style.setProperty("--mouseY", mouseY + "px");
     dummy.classList.add("o");
     e.target.appendChild(dummy);
-    console.log(e.clientX);
-    console.log(e.clientY);
     setTimeout(() => {
       e.target.removeChild(dummy);
     }, 1000);
