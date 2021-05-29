@@ -11,7 +11,7 @@ let mouseY = 100,
 
 document.addEventListener("mousemove", mouseAnimateParticles);
 //document.addEventListener("touchmove", mouseAnimateParticles);
-init();
+
 function mouseAnimateParticles(ev) {
   mouseY = ev.clientY;
   mouseX = ev.clientX;
