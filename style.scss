@@ -3,14 +3,7 @@
   font-family: Montserrat;
   src: url(./fonts/Montserrat-Regular.ttf);
 }
-@font-face {
-  font-family: Audiowide;
-  src: url(./fonts/Audiowide-Regular.ttf);
-}
-@font-face {
-  font-family: Starjedi;
-  src: url(./fonts/Stjldbl1.ttf);
-}
+
 @font-face {
   font-family: Starout;
   src: url(./fonts/Starjhol.ttf);
@@ -73,7 +66,7 @@ body {
     width: 100%;
     .name {
       line-height: 0.9em;
-      font-family: Starout;
+      font-family: Starout, Montserrat, Arial;
       font-weight: 500;
     }
     .side-ham {
