@@ -120,5 +120,4 @@ function easeOutExpo(x) {
 function easeInCirc(x) {
   return 1 - Math.sqrt(1 - Math.pow(x, 2));
 }
-animate();
 export { init, animate };
