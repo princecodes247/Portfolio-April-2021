@@ -11,7 +11,7 @@ let mouseY = 100,
 
 document.addEventListener("mousemove", mouseAnimateParticles);
 //document.addEventListener("touchmove", mouseAnimateParticles);
-init()
+init();
 function mouseAnimateParticles(ev) {
   mouseY = ev.clientY;
   mouseX = ev.clientX;
@@ -67,54 +67,49 @@ function init() {
 }
 
 function animate(params) {
-    starGeometry.vertices.forEach((p) => {
+  starGeometry.vertices.forEach((p) => {
     let boost = p.boost > 0 ? p.boost : 0;
-    
+
     p.velocity += p.acceleration + boost;
     p.y -= p.velocity;
     p.boost -= 0.002;
 
     if (p.y < -300) {
-      pointReset(p)
+      pointReset(p);
     }
   });
- stars.rotation.y += sineWave(stars);
-// if (stars.rotation.x < 361) {
-//   stars.rotation.x += sineWave(stars,true);
-  
-// }
-  
+  stars.rotation.y += sineWave(stars);
+  // if (stars.rotation.x < 361) {
+  //   stars.rotation.x += sineWave(stars,true);
+
+  // }
+
   starGeometry.verticesNeedUpdate = true;
 
-  
   requestAnimationFrame(animate);
 
   renderer.render(scene, camera);
 }
 
-function sineWave(target, z=false, amplitude = 0.009, frequency = 360){
-    if (z) {
-      let y = amplitude * Math.sin(stars.displacementZ / frequency);
-      stars.displacementZ += 1;
-      return y
-    } else {
-      
-    }
-    
-        let y = amplitude * Math.sin(stars.displacementY/frequency);
-        stars.displacementY += 1;
-         return y
-        
-    
+function sineWave(target, z = false, amplitude = 0.009, frequency = 360) {
+  if (z) {
+    let y = amplitude * Math.sin(stars.displacementZ / frequency);
+    stars.displacementZ += 1;
+    return y;
+  } else {
+  }
+
+  let y = amplitude * Math.sin(stars.displacementY / frequency);
+  stars.displacementY += 1;
+  return y;
 }
 
 function pointReset(point) {
   point.y = Math.random() * 100 + 170;
-      point.velocity = 0;
-      point.z = Math.random() * 600 - 300
-      point.x = Math.random() * 600 - 300
+  point.velocity = 0;
+  point.z = Math.random() * 600 - 300;
+  point.x = Math.random() * 600 - 300;
 }
-
 
 function easeInExpo(x) {
   return x === 0 ? 0 : Math.pow(2, 10 * x - 10);
@@ -125,5 +120,5 @@ function easeOutExpo(x) {
 function easeInCirc(x) {
   return 1 - Math.sqrt(1 - Math.pow(x, 2));
 }
-
-export {init,animate}
+animate();
+export { init, animate };
