@@ -1,4 +1,4 @@
-import * as THREE from "./three.module.js";
+import * as THREE from "./three.module.min.js";
 
 let introInDom = document.querySelector("#intro-sect div.bg");
 let camera, scene, renderer, starGeometry, starMaterial, stars;
