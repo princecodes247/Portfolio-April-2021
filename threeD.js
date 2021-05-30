@@ -1,22 +1,16 @@
 import * as THREE from "./three.module.js";
 
 let introInDom = document.querySelector("#intro-sect div.bg");
-
-let camera, scene, renderer;
-let geometry, mesh, particlesCnt, posArray;
-let starGeometry, starMaterial, stars;
-let light;
+let camera, scene, renderer, starGeometry, starMaterial, stars;
 let mouseY = 100,
   mouseX = 100;
 
 document.addEventListener("mousemove", mouseAnimateParticles);
-//document.addEventListener("touchmove", mouseAnimateParticles);
 
 function mouseAnimateParticles(ev) {
   mouseY = ev.clientY;
   mouseX = ev.clientX;
 }
-const clock = new THREE.Clock();
 
 function init() {
   camera = new THREE.PerspectiveCamera(
@@ -34,9 +28,9 @@ function init() {
   starGeometry = new THREE.Geometry();
   for (let i = 0; i < 6000; i++) {
     let star = new THREE.Vector3(
-      Math.random() * 600 - 300,
-      Math.random() * 600 - 300,
-      Math.random() * 600 - 300
+      THREE.MathUtils.randFloatSpread(600),
+      THREE.MathUtils.randFloatSpread(600),
+      THREE.MathUtils.randFloatSpread(600)
     );
     star.velocity = 0;
     star.acceleration = 0.02;
@@ -51,7 +45,6 @@ function init() {
   });
   stars = new THREE.Points(starGeometry, starMaterial);
   stars.displacementY = 0;
-  console.log(stars.rotation.z);
   stars.displacementZ = 0;
   stars.displacementZLimit = 0;
   scene.add(stars);
@@ -66,7 +59,7 @@ function init() {
   });
 }
 
-function animate(params) {
+function animate() {
   starGeometry.vertices.forEach((p) => {
     let boost = p.boost > 0 ? p.boost : 0;
 
@@ -79,45 +72,27 @@ function animate(params) {
     }
   });
   stars.rotation.y += sineWave(stars);
-  // if (stars.rotation.x < 361) {
-  //   stars.rotation.x += sineWave(stars,true);
-
-  // }
-
   starGeometry.verticesNeedUpdate = true;
-
   requestAnimationFrame(animate);
-
   renderer.render(scene, camera);
 }
 
 function sineWave(target, z = false, amplitude = 0.009, frequency = 360) {
   if (z) {
-    let y = amplitude * Math.sin(stars.displacementZ / frequency);
-    stars.displacementZ += 1;
+    let y = amplitude * Math.sin(target.displacementZ / frequency);
+    target.displacementZ += 1;
     return y;
-  } else {
   }
-
-  let y = amplitude * Math.sin(stars.displacementY / frequency);
-  stars.displacementY += 1;
+  let y = amplitude * Math.sin(target.displacementY / frequency);
+  target.displacementY += 1;
   return y;
 }
 
 function pointReset(point) {
   point.y = Math.random() * 100 + 170;
-  point.velocity = 0;
   point.z = Math.random() * 600 - 300;
   point.x = Math.random() * 600 - 300;
+  point.velocity = 0;
 }
 
-function easeInExpo(x) {
-  return x === 0 ? 0 : Math.pow(2, 10 * x - 10);
-}
-function easeOutExpo(x) {
-  return x === 1 ? 1 : 1 - Math.pow(2, -10 * x);
-}
-function easeInCirc(x) {
-  return 1 - Math.sqrt(1 - Math.pow(x, 2));
-}
 export { init, animate };

@@ -15,23 +15,6 @@
   <script defer src="main.js"></script>
 
   <script defer src="form.js"></script>
-  <script type="module">
-    import * as intro from "./threeD.js";
-    window.onload = () => {
-      let loadingPage = document.querySelector("#loading-page");
-      let progressBar = loadingPage.querySelector(".progress-bar");
-
-      let r = document.querySelector(":root");
-      r.style.setProperty("--bar", "100%");
-      r.style.setProperty("--speed", "3s");
-      progressBar.classList.add("filled");
-      setTimeout(() => {
-        loadingPage.classList.add("scale-out-center");
-        intro.init();
-        intro.animate();
-      }, 3000);
-    };
-  </script>
   <section id="loading-page">
     <svg style="transform: scale(0.38)" id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24.16 8.69">
@@ -81,6 +64,23 @@
 
     <div class="progress-bar"></div>
   </section>
+  <script type="module">
+    import * as intro from "./threeD.js";
+    window.onload = () => {
+      let loadingPage = document.querySelector("#loading-page");
+      let progressBar = loadingPage.querySelector(".progress-bar");
+      let r = document.querySelector(":root");
+      r.style.setProperty("--bar", "100%");
+      r.style.setProperty("--speed", "3s");
+      progressBar.classList.add("filled");
+      intro.init();
+      intro.animate();
+      setTimeout(() => {
+        loadingPage.classList.add("scale-out-center");
+      }, 3000);
+    };
+  </script>
+
 
   <header>
     <h2 class="name">Prince<br />Gbalam</h2>
