@@ -35,6 +35,9 @@ body {
   width: 100vw;
   padding: 0;
 }
+h2 {
+  line-height: 3em;
+}
 
 h3 {
   line-height: 0.9em;
@@ -300,10 +303,12 @@ header {
 
       width: 120px;
     }
-    div {
+    .project-desc {
       flex: 2;
       width: 100%;
-      text-align: center;
+      p {
+        text-align: center;
+      }
     }
   }
 }
