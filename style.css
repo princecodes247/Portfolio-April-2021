@@ -437,9 +437,18 @@ header .side-ham:hover .line {
 }
 
 .skill-grid div {
-  background-color: #090909;
+  background-color: transparent;
   -webkit-transition: 1s all;
   transition: 1s all;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .skill-grid div:hover {

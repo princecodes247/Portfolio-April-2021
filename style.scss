@@ -326,8 +326,11 @@ header {
 
   gap: 5px;
   div {
-    background-color: #090909;
+    background-color: transparent;
     transition: 1s all;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     &:hover {
       transform: scale(1.1);
     }
