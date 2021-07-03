@@ -1,0 +1,26 @@
+.socials {
+  display: grid;
+ grid-template-columns: repeat(auto-fit, minmax(100px, auto));
+  align-items: center;
+  gap: 20px 10px;
+  color: white;
+}
+
+.socials a {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.socials a:visited {
+  color: #777;
+}
+
+.socials a:hover {
+  color: lightskyblue;
+}
+.socials a:active {
+  color: skyblue;
+}
