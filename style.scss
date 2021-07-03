@@ -323,6 +323,7 @@ header {
   div {
     background-color: #090909;
     transition: 1s all;
+    svg {-webkit-transform:scale(1.5);transform:scale(1.5)}
     &:hover {
       transform: scale(1.1);
     }

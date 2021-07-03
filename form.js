@@ -18,7 +18,7 @@ document.querySelector("form").addEventListener("submit",()=>{
     message: event.target.querySelector("#contact-message").value
   }
   console.log(newForm);
-  fetch("https://mailion.herokuapp.com/warp/send/warp222731",{
+  fetch("https://veldora.herokuapp.com/collections/send/vel854432Myp",{
     method: "POST",
     body: newForm
   }).then(()=>{
