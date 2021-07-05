@@ -1,9 +1,13 @@
+html {
+  scroll-behavior: smooth;
+}
 .socials {
   display: grid;
  grid-template-columns: repeat(auto-fit, minmax(100px, auto));
   align-items: center;
   gap: 20px 10px;
   color: white;
+  margin-bottom: 20px;
 }
 
 .socials a {
