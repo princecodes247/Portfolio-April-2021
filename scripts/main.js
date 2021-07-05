@@ -1,7 +1,7 @@
 const page = document.documentElement;
 let target = document.querySelectorAll(".heading h1");
 let target2 = document.querySelector(".heading");
-let form = document.querySelector("form");
+
 const buttons = document.querySelectorAll("button");
 let length = 250;
 window.addEventListener("scroll", () => {
@@ -17,9 +17,6 @@ window.addEventListener("scroll", () => {
   }
 });
 
-form.addEventListener("submit", (ev) => {
-  ev.preventDefault();
-});
 
 buttons.forEach((button) => {
   button.addEventListener("click", (e) => {
