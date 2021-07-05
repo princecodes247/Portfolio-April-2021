@@ -23,14 +23,14 @@
 <meta property="twitter:title" content="Prince Gbalam - Full Stack Developer">
 <meta property="twitter:description" content="Prince Gbalam is a Full Stack Web Developer. He creates responsive websites with clean design and intuitive user interfaces. His focus is on creating elegant, mobile-friendly design and converting your website's visitors into paying customers.">
 <meta property="twitter:image" content="https://princegbalam.vercel.app/images/splash.jpg">
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preload" href="form.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="./styles/style.css" />
+  <link rel="preload" href="./styles/form.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="form.min.css">
+    <link rel="stylesheet" href="./styles/form.min.css">
   </noscript>
-  <link rel="preload" href="button.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="./styles/button.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript>
-    <link rel="stylesheet" href="button.min.css">
+    <link rel="stylesheet" href="./styles/button.min.css">
   </noscript>
 
 </head>
@@ -87,7 +87,7 @@
     <div class="progress-bar"></div>
   </section>
   <script type="module">
-    import * as intro from "./threeD.min.js";
+    import * as intro from "./scripts/threeD.min.js";
     window.onload = () => {
       let loadingPage = document.querySelector("#loading-page");
       let progressBar = loadingPage.querySelector(".progress-bar");
@@ -102,8 +102,8 @@
       }, 3000);
     };
   </script>
-  <script defer src="main.min.js"></script>
-  <script defer src="form.js"></script>
+  <script defer src="./scripts/main.min.js"></script>
+  <script defer src="./scripts/form.js"></script>
 
   <header>
     <h2 class="name">Prince<br />Gbalam</h2>
