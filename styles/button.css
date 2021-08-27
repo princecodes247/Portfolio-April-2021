@@ -19,6 +19,27 @@ button:active {
   border: 1px solid transparent;
   background-color: rgba(45, 45, 45, 0.6);
 }
+.button {
+  position: relative;
+  color: #fff;
+  text-align: center;
+  cursor: default;
+  padding: 15px 30px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid white;
+  background-color: rgba(10, 10, 10, 0.2);
+  overflow: hidden;
+  border-radius: 5px;
+}
+.button:hover {
+  background-color: rgba(35, 35, 35, 0.4);
+}
+.button:active {
+  transition: 0.3s all;
+  border: 1px solid transparent;
+  background-color: rgba(45, 45, 45, 0.6);
+}
 .o {
   position: absolute;
   top: 50%;
