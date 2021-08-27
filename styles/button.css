@@ -24,6 +24,7 @@ button:active {
   color: #fff;
   text-align: center;
   cursor: default;
+  text-decoration: none;
   padding: 15px 30px;
   background-color: transparent;
   color: white;
